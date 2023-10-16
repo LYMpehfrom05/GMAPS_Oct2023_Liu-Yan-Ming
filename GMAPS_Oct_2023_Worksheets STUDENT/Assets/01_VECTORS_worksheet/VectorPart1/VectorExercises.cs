@@ -17,9 +17,9 @@ public class VectorExercises : MonoBehaviour
     private void Start()
     {
         //if (Q2a)
-        Question2a();
-        if (Q2b)
-            Question2b(20);
+        //Question2a();
+        //if (Q2b)
+        Question2b(20);
         if (Q2d)
             Question2d();
         if (Q2e)
@@ -60,7 +60,28 @@ public class VectorExercises : MonoBehaviour
 
     void Question2b(int n)
     {
+        // Repeat if n is below 20
+        for(n=0; n<20; n++)
+        {
+            // Startpoint to be randomised, set in a range between negative and positive maximum x-coordinate,
+            // and a range between negative and positive maximum y-coordinate
+            startPt = new Vector2(Random.Range(-maxX, maxX), Random.Range(-maxY, maxY));
 
+            // Endpoint to be randomised, set in a range between negative and positive maximum x-coordinate,
+            // and a range between negative and positive maximum y-coordinate
+            endPt = new Vector2(Random.Range(-maxX, maxX), Random.Range(-maxY, maxY));
+
+            // Maximum of both x-coordinates and y-coordinates are 5
+            maxX = 5; maxY = 5;
+            // Minimum of both x-coordinates and y-coordinates are the negative maximum values
+            minX = -maxX; minY = -maxY;
+
+            // Set the drawing of line from startpoint to endpoint, at 0.02f thick and in black colour
+            drawnLine = lineFactory.GetLine(startPt, endPt, 0.02f, Color.black);
+
+            // Enable the drawing process
+            drawnLine.EnableDrawing(true);
+        }
     }
 
     void Question2d()
