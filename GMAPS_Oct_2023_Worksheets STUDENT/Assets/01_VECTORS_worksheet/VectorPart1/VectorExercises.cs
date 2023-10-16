@@ -20,9 +20,9 @@ public class VectorExercises : MonoBehaviour
         //if (Q2a)
         //Question2a();
         //if (Q2b)
-        Question2b(20);
-        if (Q2d)
-            Question2d();
+        //Question2b(20);
+        //if (Q2d)
+        Question2d();
         if (Q2e)
             Question2e(20);
         if (Q3a)
@@ -98,7 +98,8 @@ public class VectorExercises : MonoBehaviour
 
     void Question2d()
     {
-
+        // Set up program to draw red 3D debug arrow from origin to new point(5,5,0), and display it for 60 seconds
+        DebugExtension.DebugArrow(new Vector3(0, 0, 0), new Vector3(5, 5, 0), Color.red, 60f);
     }
 
     void Question2e(int n)
