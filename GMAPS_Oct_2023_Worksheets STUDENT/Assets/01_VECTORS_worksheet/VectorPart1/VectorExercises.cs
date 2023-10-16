@@ -16,6 +16,7 @@ public class VectorExercises : MonoBehaviour
 
     private void Start()
     {
+        CalculateGameDimensions();
         //if (Q2a)
         //Question2a();
         //if (Q2b)
@@ -36,7 +37,18 @@ public class VectorExercises : MonoBehaviour
 
     public void CalculateGameDimensions()
     {
+        // Set 2x enlarged orthographic camera to be the game height
+        GameHeight = Camera.main.orthographicSize * 2f;
+        // Set size of game width according to the aspect ratio
+        GameWidth = Camera.main.aspect * GameHeight;
 
+        // Maximum of both x-coordinates and y-coordinates of dimensions are the half of game's width and height
+        maxX = GameWidth / 2;
+        maxY = GameHeight / 2;
+
+        // Minimum of both x-coordinates and y-coordinates are the negative maximum values
+        minX = -maxX;
+        minY = -maxY;
     }
 
     void Question2a()
