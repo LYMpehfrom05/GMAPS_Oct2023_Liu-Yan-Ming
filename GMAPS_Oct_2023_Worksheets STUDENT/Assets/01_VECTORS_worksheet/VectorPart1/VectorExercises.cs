@@ -22,9 +22,9 @@ public class VectorExercises : MonoBehaviour
         //if (Q2b)
         //Question2b(20);
         //if (Q2d)
-        Question2d();
-        if (Q2e)
-            Question2e(20);
+        //Question2d();
+        //if (Q2e)
+        Question2e(20);
         if (Q3a)
             Question3a();
         if (Q3b)
@@ -104,20 +104,20 @@ public class VectorExercises : MonoBehaviour
 
     void Question2e(int n)
     {
+        // Repeat if i is below n
         for (int i = 0; i < n; i++)
         {
-            startPt = new Vector2(
-                Random.Range(-maxX, maxX), 
-                Random.Range(-maxY, maxY));
+            // Startpoint to be randomised, set in a range between negative and positive maximum x-coordinate,
+            // and a range between negative and positive maximum y-coordinate
+            startPt = new Vector2(Random.Range(-maxX, maxX), Random.Range(-maxY, maxY));
 
-            // Your code here
-            // ...
+            // Minimum of both x-coordinates and y-coordinates are the negative maximum values
+            minX = -maxX; minY = -maxY;
 
-            //DebugExtension.DebugArrow(
-            //    new Vector3(0, 0, 0),
-            //    // Your code here,
-            //    Color.white,
-            //    60f);
+            // Set up program to draw white 3D debug arrow from origin to new randomized point, and display it for 60 seconds. Endpoint to be randomised, set
+            // in a range between negative and positive maximum x-coordinate, and a range between negative and positive maximum y-coordinate. Z-coordinates
+            // follow that of y-coordinates
+            DebugExtension.DebugArrow(new Vector3(0, 0, 0), new Vector3(Random.Range(-maxX, maxX), Random.Range(-maxY, maxY), Random.Range(minY, maxY)), Color.white, 60f);
         }  
     }
 
