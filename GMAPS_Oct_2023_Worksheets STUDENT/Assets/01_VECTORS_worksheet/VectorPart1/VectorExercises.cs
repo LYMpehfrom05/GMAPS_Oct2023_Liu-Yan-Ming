@@ -26,11 +26,11 @@ public class VectorExercises : MonoBehaviour
         //if (Q2e)
         //Question2e(20);
         //if (Q3a)
-        //Question3a();
+        Question3a();
         //if (Q3b)
-        Question3b();
-        if (Q3c)
-            Question3c();
+        //Question3b();
+        //if (Q3c)
+        //Question3c();
         if (projection)
             Projection();
     }
@@ -145,10 +145,6 @@ public class VectorExercises : MonoBehaviour
 
         // Draw -b arrow from a, coloured white, at 60f size
         DebugExtension.DebugArrow(a.ToUnityVector3(), -b.ToUnityVector3(), Color.white, 60f);
-
-        // Enable the drawing process
-        drawnLine.EnableDrawing(true);
-
     }
 
     public void Question3b()
@@ -157,16 +153,25 @@ public class VectorExercises : MonoBehaviour
         HVector2D a = new HVector2D(3, 5);
         HVector2D b = a*2;
 
-        // Draw arrow from origin to a, coloured red, at 60f size
+        // Draw arrow from origin to a, coloured red, at 60f size divided by 2
         DebugExtension.DebugArrow(Vector3.zero, a.ToUnityVector3(), Color.red, 60f/2);
 
         // Draw arrow 1f from origin, to b, coloured green
         DebugExtension.DebugArrow(new Vector3(1,0,0), b.ToUnityVector3(), Color.green);
+
     }
 
     public void Question3c()
     {
+        // Create new vector a
+        HVector2D a = new HVector2D(3, 5);
 
+        // Draw arrow from origin to a, coloured red, at 60f size
+        DebugExtension.DebugArrow(Vector3.zero, a.ToUnityVector3(), Color.red, 60f);
+
+        // Draw arrow from normalised 1f from origin, to a, coloured red, at 60f size
+        //DebugExtension.DebugArrow(new Vector3(1,0,0).Normalize(), a.ToUnityVector3(), Color.red, 60f);
+        Debug.Log("Magnitude of a = " + a.Magnitude().ToString("F2"));
     }
 
     public void Projection()
