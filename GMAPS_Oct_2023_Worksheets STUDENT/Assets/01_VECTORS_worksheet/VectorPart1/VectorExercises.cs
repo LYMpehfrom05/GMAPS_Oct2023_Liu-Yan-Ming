@@ -24,9 +24,9 @@ public class VectorExercises : MonoBehaviour
         //if (Q2d)
         //Question2d();
         //if (Q2e)
-        Question2e(20);
-        if (Q3a)
-            Question3a();
+        //Question2e(20);
+        //if (Q3a)
+        Question3a();
         if (Q3b)
             Question3b();
         if (Q3c)
@@ -123,19 +123,32 @@ public class VectorExercises : MonoBehaviour
 
     public void Question3a()
     {
+        // Create new vectors a,b,and c
         HVector2D a = new HVector2D(3, 5);
-        //HVector2D b = // Your code here;
-        //HVector2D c = // Your code here;
+        HVector2D b = new HVector2D(-4, 2);
+        HVector2D c = a + b;
 
+        // Draw arrow from origin to a, coloured red, at 60f size, and print out console message of its magnitude
         DebugExtension.DebugArrow(Vector3.zero, a.ToUnityVector3(), Color.red, 60f);
-        // Your code here
-        // ...
+        Debug.Log("Magnitude of a = " + a.Magnitude().ToString("F2"));
 
-        // Your code here
+        // Draw arrow from origin to b, coloured green, at 60f size, and print out console message of its magnitude
+        DebugExtension.DebugArrow(Vector3.zero, b.ToUnityVector3(), Color.green, 60f);
+        Debug.Log("Magnitude of b = " + b.Magnitude().ToString("F2"));
 
-        //Debug.Log("Magnitude of a = " + // Your code here.ToString("F2"));
-        // Your code here
-        // ...
+        // Draw arrow from origin to c, coloured white, at 60f size, and print out console message of its magnitude
+        DebugExtension.DebugArrow(Vector3.zero, c.ToUnityVector3(), Color.white, 60f);
+        Debug.Log("Magnitude of c = " + c.Magnitude().ToString("F2"));
+
+        // Draw c arrow from b, coloured white, at 60f size
+        DebugExtension.DebugArrow(b.ToUnityVector3(), c.ToUnityVector3(), Color.white, 60f);
+
+        // Draw -b arrow from a, coloured white, at 60f size
+        DebugExtension.DebugArrow(a.ToUnityVector3(), -b.ToUnityVector3(), Color.white, 60f);
+
+        // Enable the drawing process
+        drawnLine.EnableDrawing(true);
+
     }
 
     public void Question3b()

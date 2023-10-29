@@ -30,59 +30,61 @@ public class HVector2D
         h = 1.0f;
     }
 
-    // public static HVector2D operator +( /*???*/)
-    // {
+    public static HVector2D operator +(HVector2D a, HVector2D b)
+    {
+        return new HVector2D(a.x + b.x, a.y + b.y);
+    }
 
-    // }
+    public static HVector2D operator -(HVector2D a, HVector2D b)
+    {
+        return new HVector2D(a.x - b.x, a.y - b.y);
+    }
 
-    // public static HVector2D operator -(/*???*/)
-    // {
+    public static HVector2D operator *(HVector2D a, float scalar)
+    {
+        return new HVector2D(a.x * scalar, a.y * scalar);
+    }
 
-    // }
+    public static HVector2D operator /(HVector2D a, float scalar)
+    {
+        return new HVector2D(a.x / scalar, a.y / scalar);
+    }
 
-    // public static HVector2D operator *(/*???*/)
-    // {
+    public float Magnitude()
+    {
+        return Mathf.Sqrt(x * x + y * y);
+    }
 
-    // }
+     public void Normalize()
+    {
+        float mag = Magnitude();
+        x /= mag; y /= mag;
+    }
 
-    // public static HVector2D operator /(/*???*/)
-    // {
+    public float DotProduct(HVector2D vec)
+    {
+        return (x * vec.x + y * vec.y);
+    }
 
-    // }
+    public HVector2D Projection(HVector2D b)
+    {
+        HVector2D proj = b * (DotProduct(b) / b.DotProduct(b));
+        return proj;
+    }
 
-    // public float Magnitude()
-    // {
-
-    // }
-
-    // public void Normalize()
-    // {
-
-    // }
-
-    // public float DotProduct(/*???*/)
-    // {
-
-    // }
-
-    // public HVector2D Projection(/*???*/)
-    // {
-
-    // }
-
-    // public float FindAngle(/*???*/)
-    // {
-
-    // }
+    public float FindAngle(HVector2D vec)
+    {
+        return (float)Mathf.Acos(DotProduct(vec) / (Magnitude() * vec.Magnitude()));
+    }
 
     public Vector2 ToUnityVector2()
     {
-        return Vector2.zero; // change this
+        return new Vector2(x,y); // change this
     }
 
     public Vector3 ToUnityVector3()
     {
-        return Vector2.zero; // change this
+        return new Vector3(x,y,0); // change this
     }
 
     // public void Print()
