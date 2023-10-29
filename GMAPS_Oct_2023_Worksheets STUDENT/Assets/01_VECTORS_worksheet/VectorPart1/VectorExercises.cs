@@ -26,9 +26,9 @@ public class VectorExercises : MonoBehaviour
         //if (Q2e)
         //Question2e(20);
         //if (Q3a)
-        Question3a();
-        if (Q3b)
-            Question3b();
+        //Question3a();
+        //if (Q3b)
+        Question3b();
         if (Q3c)
             Question3c();
         if (projection)
@@ -153,11 +153,15 @@ public class VectorExercises : MonoBehaviour
 
     public void Question3b()
     {
-        // Your code here
-        // ...
+        // Create new vectors a and b, which is twice the size of a
+        HVector2D a = new HVector2D(3, 5);
+        HVector2D b = a*2;
 
-        //DebugExtension.DebugArrow(Vector3.zero, a.ToUnityVector3(), Color.red, 60f);
-        // Your code here
+        // Draw arrow from origin to a, coloured red, at 60f size
+        DebugExtension.DebugArrow(Vector3.zero, a.ToUnityVector3(), Color.red, 60f/2);
+
+        // Draw arrow 1f from origin, to b, coloured green
+        DebugExtension.DebugArrow(new Vector3(1,0,0), b.ToUnityVector3(), Color.green);
     }
 
     public void Question3c()
