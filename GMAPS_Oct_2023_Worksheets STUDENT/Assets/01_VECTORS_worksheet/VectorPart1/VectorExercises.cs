@@ -26,11 +26,11 @@ public class VectorExercises : MonoBehaviour
         //if (Q2e)
         //Question2e(20);
         //if (Q3a)
-        Question3a();
+        //Question3a();
         //if (Q3b)
         //Question3b();
         //if (Q3c)
-        //Question3c();
+        Question3c();
         if (projection)
             Projection();
     }
@@ -170,7 +170,7 @@ public class VectorExercises : MonoBehaviour
         DebugExtension.DebugArrow(Vector3.zero, a.ToUnityVector3(), Color.red, 60f);
 
         // Draw arrow from normalised 1f from origin, to a, coloured red, at 60f size
-        //DebugExtension.DebugArrow(new Vector3(1,0,0).Normalize(), a.ToUnityVector3(), Color.red, 60f);
+        DebugExtension.DebugArrow(new Vector3.Normalize(1,0,0), a.ToUnityVector3(), Color.red, 60f);
         Debug.Log("Magnitude of a = " + a.Magnitude().ToString("F2"));
     }
 
