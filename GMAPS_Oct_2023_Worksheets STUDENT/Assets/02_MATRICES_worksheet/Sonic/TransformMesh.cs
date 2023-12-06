@@ -40,11 +40,22 @@ public class TransformMesh : MonoBehaviour
 
     void Rotate(float angle)
     {
+        // New variables
+        HMatrix2D toOriginMatrix = new HMatrix2D();
+        HMatrix2D fromOriginMatrix = new HMatrix2D();
+        HMatrix2D rotateMatrix = new HMatrix2D();
+
+        // Translation matrix that moves vertices to origin
+        toOriginMatrix.settranslationmat(-pos.x, -pos.y);
+        // Translation matrix that moves vertices to original position
+        fromOriginMatrix.settranslationmat(pos.x, pos.y);
+        // Rotation matrix
+        rotateMatrix.setrotationmat(angle);
+
+        // Initialise to identity
         transformMatrix.SetIdentity();
-
-        // Your code here
-
-        transformMatrix = fromOriginMatrix * // Your code here;
+        // Combine matrices to store in transformMatrix
+        transformMatrix = fromOriginMatrix * rotateMatrix * toOriginMatrix;
 
         Transform();
     }
