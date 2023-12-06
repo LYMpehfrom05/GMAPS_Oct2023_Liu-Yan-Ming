@@ -275,11 +275,18 @@ public class hmatrix2d
 
     public void settranslationmat(float transx, float transy)
     {
-        // your code here
+        // Set matrix to identity matrix
+        setidentity();
+        // Rightmost column always used for translation due to "Right-to-Left" order of matrix multiplication
+        // Modify third column to represent x transformation
+        entries[0,2] = transx;
+        // Move down the column to the next row to represent y transformation
+        entries[1,2] = transy;
     }
 
     public void setrotationmat(float rotdeg)
     {
+        // Set matrix to identity matrix
         setidentity();
         // Degrees to radians
         float rad = rotdeg * Mathf.Deg2Rad;
