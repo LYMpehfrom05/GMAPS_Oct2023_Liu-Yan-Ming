@@ -108,7 +108,13 @@ public class hmatrix2d
     //
     public static hvector2d operator *(hmatrix2d left, hvector2d right)
     {
-        return // your code here
+        return new hvector2d
+        (
+            // Multiply each number in the matrix with each axis of the vector, z axis is 0 since the vector is 2D
+            left.entries[0,0] * right.x + left.entries[0,1] * right.y + left.entries[0,2] * 1.0f,
+            left.entries[1,0] * right.x + left.entries[1,1] * right.y + left.entries[1,2] * 1.0f,
+            left.entries[2,0] * right.x + left.entries[2,1] * right.y + left.entries[2,2] * 1.0f
+        );
     }
 
     // note that the second argument is a hmatrix2d object
