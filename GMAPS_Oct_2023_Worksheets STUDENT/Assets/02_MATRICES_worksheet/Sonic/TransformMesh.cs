@@ -51,13 +51,21 @@ public class TransformMesh : MonoBehaviour
 
     private void Transform()
     {
+        // Get vertices from cloned mesh
         vertices = meshManager.clonedMesh.vertices;
-
+        
+        // For the length of the vertices
         for (int i = 0; i < vertices.Length; i++)
         {
-            // Your code here
+            // Assign x and y values of vertices matrix to new variable vert
+            HVector2D vert = new HVector2D(vertices[i].x, vertices[i].y);
+            // Update vertices matrix with transformation matrix
+            vert = transformMatrix * vert;
+            // Update the x and y values of the vertices
+            vertices[i].x = vert.x;
+            vertices[i].y = vert.y;
         }
-
+        // Update vertices for clone mesh
         meshManager.clonedMesh.vertices = vertices;
     }
 }
