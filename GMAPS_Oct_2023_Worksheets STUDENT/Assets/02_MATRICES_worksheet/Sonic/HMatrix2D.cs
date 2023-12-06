@@ -100,23 +100,34 @@ public class hmatrix2d
 
     public void setidentity()
     {
+        //// 3 rows
+        //for (int y = 0; y < 3 ; y++)
+        //{
+        //    // 3 columns
+        //    for (int x = 0; x < 3; x++)
+        //    {
+        //        // If elements are on the main diagonal, as the matrix is a square matrix, x is equal to y
+        //        if(x == y) 
+        //        {
+        //            // Elements are set to 1
+        //            entries [x,y] = 1;
+        //        }
+        //        else
+        //        {
+        //            // Elements not on a diagonal set are set to 0
+        //            entries[x,y] = 0;
+        //        }
+        //    }
+        //}
+
         // 3 rows
-        for (int y = 0; y < 3 ; y++)
+        for (int y = 0; y < 3; y++)
         {
             // 3 columns
             for (int x = 0; x < 3; x++)
             {
-                // If elements are on the main diagonal, as the matrix is a square matrix, x is equal to y
-                if(x == y) 
-                {
-                    // Elements are set to 1
-                    entries [x,y] = 1;
-                }
-                else
-                {
-                    // Elements not on a diagonal set are set to 0
-                    entries[x,y] = 0;
-                }
+                // If elements are on the main diagonal, as the matrix is a square matrix, x is equal to y, elements are set to 1. Otherwise, they are set to 0
+                entries[x, y] = x == y ? 1: 0;
             }
         }
     }
