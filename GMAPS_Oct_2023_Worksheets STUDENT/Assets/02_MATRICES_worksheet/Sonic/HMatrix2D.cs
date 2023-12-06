@@ -137,7 +137,57 @@ public class hmatrix2d
                 */
             left.entries[0, 0] * right.entries[0, 1] + left.entries[0, 1] * right.entries[1, 1] + left.entries[0, 2] * right.entries[2, 1],
 
-        // and so on for another 7 entries
+            // and so on for another 7 entries
+
+            /* 
+                00 01 02    xx xx 02
+                xx xx xx    xx xx 12
+                xx xx xx    xx xx 22
+                */
+            left.entries[0, 0] * right.entries[0, 2] + left.entries[0, 1] * right.entries[1, 2] + left.entries[0, 2] * right.entries[2, 2],
+
+            /* 
+                xx xx xx    00 xx xx
+                10 11 12    10 xx xx
+                xx xx xx    20 xx xx
+                */
+            left.entries[1, 0] * right.entries[0, 0] + left.entries[1, 1] * right.entries[1, 0] + left.entries[1, 2] * right.entries[2, 0],
+
+            /* 
+                xx xx xx    xx 01 xx
+                10 11 12    xx 11 xx
+                xx xx xx    xx 21 xx
+                */
+            left.entries[1, 0] * right.entries[0, 1] + left.entries[1, 1] * right.entries[1, 1] + left.entries[1, 2] * right.entries[2, 1],
+
+            /* 
+                xx xx xx    xx xx 02
+                10 11 12    xx xx 12
+                xx xx xx    xx xx 22
+                */
+            left.entries[1, 0] * right.entries[0, 2] + left.entries[1, 1] * right.entries[1, 2] + left.entries[1, 2] * right.entries[2, 2],
+
+            /* 
+                xx xx xx    00 xx xx
+                xx xx xx    10 xx xx
+                20 21 22    20 xx xx
+                */
+            left.entries[2, 0] * right.entries[0, 0] + left.entries[2, 1] * right.entries[1, 0] + left.entries[2, 2] * right.entries[2, 0],
+
+            /* 
+                xx xx xx    xx 01 xx
+                xx xx xx    xx 11 xx
+                20 21 22    xx 21 xx
+                */
+            left.entries[2, 0] * right.entries[0, 1] + left.entries[2, 1] * right.entries[1, 1] + left.entries[2, 2] * right.entries[2, 1],
+
+            /* 
+                xx xx xx    xx xx 02
+                xx xx xx    xx xx 12
+                20 21 22    xx xx 22
+                */
+            left.entries[2, 0] * right.entries[0, 2] + left.entries[2, 1] * right.entries[1, 2] + left.entries[2, 2] * right.entries[2, 2],
+
     );
     }
 
