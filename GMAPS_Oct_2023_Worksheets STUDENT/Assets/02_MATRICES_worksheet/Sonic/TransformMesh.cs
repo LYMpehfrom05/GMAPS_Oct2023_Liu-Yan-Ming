@@ -29,7 +29,13 @@ public class TransformMesh : MonoBehaviour
 
     void Translate(float x, float y)
     {
-        // Your code here
+        // Set identity and translation matrix from the HMatrix2D script
+        HMatrix2D.setidentity();
+        HMatrix2D.settranslationmat(x,y);
+        Transform(); // Call transform
+
+        // Update position with transform
+        pos = Transform() * pos;
     }
 
     void Rotate(float angle)
