@@ -137,12 +137,40 @@ public class hmatrix2d
 
     public static bool operator ==(hmatrix2d left, hmatrix2d right)
     {
-        // your code here
+        // 3 rows
+        for (int y = 0; y < 3; y++)
+        {
+            // 3 columns
+            for (int x = 0; x < 3; x++)
+            {
+                // Return false if left and right entries do not match
+                if(left.entries[x,y] != right.entries[x,y])
+                {
+                    return false;
+                }
+            }
+        }
+        // Return true otherwise as this alternate condition means they match
+        return true;
     }
 
     public static bool operator !=(hmatrix2d left, hmatrix2d right)
     {
-        // your code here
+        // 3 rows
+        for (int y = 0; y < 3; y++)
+        {
+            // 3 columns
+            for (int x = 0; x < 3; x++)
+            {
+                // Return true if left and right entries do not match
+                if (left.entries[x, y] != right.entries[x, y])
+                {
+                    return true;
+                }
+            }
+        }
+        // Return false otherwise as this alternate condition means they match
+        return false;
     }
 
     public hmatrix2d transpose()
