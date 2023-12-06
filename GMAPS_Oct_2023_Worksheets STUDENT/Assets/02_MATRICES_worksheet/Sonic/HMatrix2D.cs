@@ -49,17 +49,59 @@ public class hmatrix2d
 
     public static hmatrix2d operator +(hmatrix2d left, hmatrix2d right)
     {
-        return // your code here
+        // Create variable for new addition operator
+        hmatrix2d addEntries = new hmatrix2d();
+
+        // 3 rows
+        for (int y = 0; y < 3; y++)
+        {
+            // 3 columns
+            for (int x = 0; x < 3; x++)
+            {
+                // The operator = left + right entries
+                addEntries.entries[x,y] = left.entries[x,y] + right.entries[x,y];
+            }
+        }
+        // Return result
+        return addEntries;
     }
 
     public static hmatrix2d operator -(hmatrix2d left, hmatrix2d right)
     {
-        return // your code here
+        // Create variable for new subtraction operator
+        hmatrix2d subtractEntries = new hmatrix2d();
+
+        // 3 rows
+        for (int y = 0; y < 3; y++)
+        {
+            // 3 columns
+            for (int x = 0; x < 3; x++)
+            {
+                // The operator = left - right entries
+                subtractEntries.entries[x, y] = left.entries[x, y] - right.entries[x, y];
+            }
+        }
+        // Return result
+        return subtractEntries;
     }
 
     public static hmatrix2d operator *(hmatrix2d left, float scalar)
     {
-        return // your code here
+        // Create variable for new multiplication operator
+        hmatrix2d multiplyEntries = new hmatrix2d();
+
+        // 3 rows
+        for (int y = 0; y < 3; y++)
+        {
+            // 3 columns
+            for (int x = 0; x < 3; x++)
+            {
+                // The operator = left entries multiplied by the scalar
+                multiplyEntries.entries[x, y] = left.entries[x, y] * scalar;
+            }
+        }
+        // Return result
+        return multiplyEntries;
     }
 
     // note that the second argument is a hvector2d object
