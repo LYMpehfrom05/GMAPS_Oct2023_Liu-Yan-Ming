@@ -280,7 +280,15 @@ public class hmatrix2d
 
     public void setrotationmat(float rotdeg)
     {
-        // your code here
+        setidentity();
+        // Degrees to radians
+        float rad = rotdeg * Mathf.Deg2Rad;
+
+        // The entries in a 2D rotation matrix, by rows, are Cos - Sin, Sin + Cos
+        entries[0,0] = Mathf.Cos(rad);
+        entries[0,1] = -Mathf.Sin(rad);
+        entries[1,0] = Mathf.Sin(rad);
+        entries[1,1] = Mathf.Cos(rad);
     }
 
     public void setscalingmat(float scalex, float scaley)
