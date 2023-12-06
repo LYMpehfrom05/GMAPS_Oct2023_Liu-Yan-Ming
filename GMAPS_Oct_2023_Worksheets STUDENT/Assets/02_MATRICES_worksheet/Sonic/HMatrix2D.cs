@@ -15,7 +15,16 @@ public class hmatrix2d
 
     public hmatrix2d(float[,] multiarray)
     {
-        // your code here
+        // 3 rows
+        for (int y = 0; y < 3; y++)
+        {
+            // 3 columns
+            for (int x = 0; x < 3; x++)
+            {
+                // Assign multiarray values to entries
+                entries[x, y] = multiarray[x, y];
+            }
+        }
     }
 
     public hmatrix2d(float m00, float m01, float m02,
@@ -23,13 +32,19 @@ public class hmatrix2d
              float m20, float m21, float m22)
     {
         // first row
-        // your code here
+        entries[0,0] = m00; // Column 1
+        entries[1,0] = m01; // Column 2
+        entries[2,0] = m02; // Column 3
 
         // second row
-        // your code here
+        entries[0,1] = m10; // Column 1
+        entries[1,1] = m11; // Column 2
+        entries[2,1] = m12; // Column 3
 
         // third row
-        // your code here
+        entries[0,2] = m20; // Column 1
+        entries[1,2] = m21; // Column 2
+        entries[2,2] = m22; // Column 3
     }
 
     public static hmatrix2d operator +(hmatrix2d left, hmatrix2d right)
