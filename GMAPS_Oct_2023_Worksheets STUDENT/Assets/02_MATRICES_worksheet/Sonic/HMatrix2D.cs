@@ -100,7 +100,25 @@ public class hmatrix2d
 
     public void setidentity()
     {
-        // your code here
+        // 3 rows
+        for (int y = 0; y < 3 ; y++)
+        {
+            // 3 columns
+            for (int x = 0; x < 3; x++)
+            {
+                // If elements are on the main diagonal, as the matrix is a square matrix, x is equal to y
+                if(x == y) 
+                {
+                    // Elements are set to 1
+                    entries [x,y] = 1;
+                }
+                else
+                {
+                    // Elements not on a diagonal set are set to 0
+                    entries[x,y] = 0;
+                }
+            }
+        }
     }
 
     public void settranslationmat(float transx, float transy)
