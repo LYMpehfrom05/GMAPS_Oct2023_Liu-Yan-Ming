@@ -186,7 +186,7 @@ public class hmatrix2d
                 xx xx xx    xx xx 12
                 20 21 22    xx xx 22
                 */
-            left.entries[2, 0] * right.entries[0, 2] + left.entries[2, 1] * right.entries[1, 2] + left.entries[2, 2] * right.entries[2, 2],
+            left.entries[2, 0] * right.entries[0, 2] + left.entries[2, 1] * right.entries[1, 2] + left.entries[2, 2] * right.entries[2, 2]
 
     );
     }
@@ -229,15 +229,15 @@ public class hmatrix2d
         return false;
     }
 
-    public hmatrix2d transpose()
-    {
-        return // your code here
-    }
+    //public hmatrix2d transpose()
+    //{
+    //    return // your code here
+    //}
 
-    public float getdeterminant()
-    {
-        return // your code here
-    }
+    //public float getdeterminant()
+    //{
+    //    return // your code here
+    //}
 
     public void setidentity()
     {
