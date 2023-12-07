@@ -15,7 +15,7 @@ public class TestMatrix : MonoBehaviour
         Question2();
     }
 
-    public Question2()
+    public HMatrix2D Question2()
     {
         // Declare objects
         HMatrix2D mat1 = new HMatrix2D();

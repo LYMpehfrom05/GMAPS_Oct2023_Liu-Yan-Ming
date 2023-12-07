@@ -1,19 +1,19 @@
 // uncomment this whole file.
 
-using system.collections;
-using system.collections.generic;
-using unityengine;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class hmatrix2d
+public class HMatrix2D
 {
     public float[,] entries { get; set; } = new float[3, 3];
 
-    public hmatrix2d()
+    public HMatrix2D ()
     {
         // your code here
     }
 
-    public hmatrix2d(float[,] multiarray)
+    public HMatrix2D (float[,] multiarray)
     {
         // 3 rows
         for (int y = 0; y < 3; y++)
@@ -27,7 +27,7 @@ public class hmatrix2d
         }
     }
 
-    public hmatrix2d(float m00, float m01, float m02,
+    public HMatrix2D (float m00, float m01, float m02,
              float m10, float m11, float m12,
              float m20, float m21, float m22)
     {
@@ -47,10 +47,10 @@ public class hmatrix2d
         entries[2,2] = m22; // Column 3
     }
 
-    public static hmatrix2d operator +(hmatrix2d left, hmatrix2d right)
+    public static HMatrix2D operator +(HMatrix2D left, HMatrix2D right)
     {
         // Create variable for new addition operator
-        hmatrix2d addEntries = new hmatrix2d();
+        HMatrix2D addEntries = new HMatrix2D();
 
         // 3 rows
         for (int y = 0; y < 3; y++)
@@ -66,10 +66,10 @@ public class hmatrix2d
         return addEntries;
     }
 
-    public static hmatrix2d operator -(hmatrix2d left, hmatrix2d right)
+    public static HMatrix2D operator -(HMatrix2D left, HMatrix2D right)
     {
         // Create variable for new subtraction operator
-        hmatrix2d subtractEntries = new hmatrix2d();
+        HMatrix2D subtractEntries = new HMatrix2D();
 
         // 3 rows
         for (int y = 0; y < 3; y++)
@@ -85,10 +85,10 @@ public class hmatrix2d
         return subtractEntries;
     }
 
-    public static hmatrix2d operator *(hmatrix2d left, float scalar)
+    public static HMatrix2D operator *(HMatrix2D left, float scalar)
     {
         // Create variable for new multiplication operator
-        hmatrix2d multiplyEntries = new hmatrix2d();
+        HMatrix2D multiplyEntries = new HMatrix2D();
 
         // 3 rows
         for (int y = 0; y < 3; y++)
@@ -104,11 +104,11 @@ public class hmatrix2d
         return multiplyEntries;
     }
 
-    // note that the second argument is a hvector2d object
+    // note that the second argument is a HVector2D object
     //
-    public static hvector2d operator *(hmatrix2d left, hvector2d right)
+    public static HVector2D operator *(HMatrix2D left, HVector2D right)
     {
-        return new hvector2d
+        return new HVector2D
         (
             // Multiply each number in the matrix with each axis of the vector, z axis is 0 since the vector is 2D
             left.entries[0,0] * right.x + left.entries[0,1] * right.y + left.entries[0,2] * 1.0f,
@@ -117,11 +117,11 @@ public class hmatrix2d
         );
     }
 
-    // note that the second argument is a hmatrix2d object
+    // note that the second argument is a HMatrix2D object
     //
-    public static hmatrix2d operator *(hmatrix2d left, hmatrix2d right)
+    public static HMatrix2D operator *(HMatrix2D left, HMatrix2D right)
     {
-        return new hmatrix2d
+        return new HMatrix2D
         (
             /* 
                 00 01 02    00 xx xx
@@ -191,7 +191,7 @@ public class hmatrix2d
     );
     }
 
-    public static bool operator ==(hmatrix2d left, hmatrix2d right)
+    public static bool operator ==(HMatrix2D left, HMatrix2D right)
     {
         // 3 rows
         for (int y = 0; y < 3; y++)
@@ -210,7 +210,7 @@ public class hmatrix2d
         return true;
     }
 
-    public static bool operator !=(hmatrix2d left, hmatrix2d right)
+    public static bool operator !=(HMatrix2D left, HMatrix2D right)
     {
         // 3 rows
         for (int y = 0; y < 3; y++)
