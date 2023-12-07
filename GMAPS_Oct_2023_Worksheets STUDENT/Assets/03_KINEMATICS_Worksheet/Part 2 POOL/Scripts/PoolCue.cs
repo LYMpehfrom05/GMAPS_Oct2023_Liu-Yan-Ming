@@ -29,15 +29,19 @@ public class PoolCue : MonoBehaviour
                 drawnLine.EnableDrawing(true);
             }
         }
+        // If mouse button is released when line is drawn
         else if (Input.GetMouseButtonUp(0) && drawnLine != null)
         {
+            // Disable line drawing
             drawnLine.EnableDrawing(false);
 
-            //update the velocity of the white ball.
-            HVector2D v = new HVector2D(/*your code here*/);
-            ball./*your code here*/ = v;
+            // Update velocity of ball to move to mouse position
+            HVector2D v = new HVector2D(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
+            // Set velocity of the ball to v
+            ball.Velocity = v;
 
-            drawnLine = null; // End line drawing            
+            // End line drawing
+            drawnLine = null;             
         }
         // Update line end at mouse position while drawing
         if (drawnLine != null)
