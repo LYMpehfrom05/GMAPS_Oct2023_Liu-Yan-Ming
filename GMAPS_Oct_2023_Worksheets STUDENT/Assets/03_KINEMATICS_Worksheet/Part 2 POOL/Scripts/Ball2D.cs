@@ -41,13 +41,16 @@ public class Ball2D : MonoBehaviour
 
     private void UpdateBall2DPhysics(float deltaTime)
     {
-        float displacementX = /*your code here*/;
-        float displacementY = /*your code here*/;
+        // Displacement = velocity * time
+        float displacementX = Velocity.x * deltaTime;
+        float displacementY = Velocity.y * deltaTime;
 
-        Position.x += /*your code here*/;
-        Position.y += /*your code here*/;
+        // Update position of ball according to the displacement
+        Position.x += displacementX;
+        Position.y += displacementY;
 
-        transform.position = new Vector2(/*your code here*/);
+        // Set Unity transform position to the updated one
+        transform.position = new Vector2(Position.x,Position.y);
     }
 }
 
